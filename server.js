@@ -16,6 +16,9 @@ throw new Error(`unable to connect to database: ${config.mongoUri}`)
 app.get("/", (req, res) => {
 res.json({ message: "Welcome to User application." });
 });
+app.get("/info", (req, res) => {
+    res.json({ message: "Welcome to Healthstore application " , id: "628" });
+    });
 app.listen(config.port, (err) => { 
 if (err) {
 console.log(err) 
