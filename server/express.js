@@ -6,6 +6,7 @@ import cors from 'cors'
 import helmet from 'helmet'
 import Template from './../template.js'
 import userRoutes from './routes/user.routes.js'
+import supplementsRoutes from './routes/supplements.routes.js'
 const app = express()
 app.get('/', (req, res) => {
     res.status(200).send(Template()) 
@@ -19,4 +20,5 @@ app.use(cookieParser())
 app.use(compress())
 app.use(helmet())
 app.use(cors())
+app.use('/', supplementsRoutes)
 export default app
